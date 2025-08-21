@@ -54,22 +54,22 @@ O projeto busca centralizar a comunicação e reduzir o tempo gasto pela comunid
 ## 🏗️ Arquitetura Inicial (Esboço)
 
 A arquitetura pensada inicialmente segue uma abordagem modular, garantindo **escalabilidade**, **manutenibilidade**  
-
 ```mermaid
-    A[Usuário via WhatsApp] --> B[WhatsApp Business API]
-    B --> C[Camada de Integração]
-    C --> D[Core do Chatbot]
-    
-    subgraph "Lógica Interna do Core"
-        D --> E(Processamento de Linguagem Natural (PLN))
-        D --> F(Base de Conhecimento)
-        E --> D
-        F --> D
-        D --> G(Serviços Externos / APIs IFMG)
-    end
+graph TD
+    A[Usuário via WhatsApp] --> B[WhatsApp Business API]
+    B --> C[Camada de Integração]
+    C --> D[Core do Chatbot]
+    
+    subgraph Lógica Interna do Core
+        D --> E(Processamento de Linguagem Natural (PLN))
+        D --> F(Base de Conhecimento)
+        E --> D
+        F --> D
+        D --> G(Serviços Externos / APIs IFMG)
+    end
 
-    D --> H(Logs e Monitoramento)
-    D -- Gera --> I(Respostas ao Usuário)
-    I -- Envia --> C
+    D --> H(Logs e Monitoramento)
+    D -- Gera --> I(Respostas ao Usuário)
+    I --> C
 
-    C --> B
+    C --> B
