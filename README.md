@@ -55,6 +55,7 @@ O projeto busca centralizar a comunicação e reduzir o tempo gasto pela comunid
 
 A arquitetura pensada inicialmente segue uma abordagem modular, garantindo **escalabilidade**, **manutenibilidade**  
 
+```mermaid
 flowchart TD
     A[Usuário via WhatsApp] --> B[WhatsApp Business API]
     B --> C[Camada de Integração]
