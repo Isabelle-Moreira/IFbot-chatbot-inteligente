@@ -67,4 +67,4 @@ flowchart TD
     D --> G[Serviços Externos / APIs IFMG]
     D --> H[Logs e Monitoramento]
     D --> I[Respostas ao Usuário]
-
+```
