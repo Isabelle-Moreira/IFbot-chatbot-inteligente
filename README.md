@@ -48,3 +48,23 @@ O projeto busca centralizar a comunicação e reduzir o tempo gasto pela comunid
 - **Testes e homologação**: até Dia 140  
 - **Implantação**: até Dia 155  
 - **Encerramento e lições aprendidas**: até Dia 170  
+
+---
+
+## 🏗️ Arquitetura Inicial (Esboço)
+
+A arquitetura pensada inicialmente segue uma abordagem modular, garantindo **escalabilidade**, **manutenibilidade**  
+
+```mermaid
+flowchart TD
+    A[Usuário via WhatsApp] --> B[WhatsApp Business API]
+    B --> C[Camada de Integração]
+    C --> D[Core do Chatbot]
+    D --> E[Processamento de Linguagem Natural (PLN)]
+    D --> F[Base de Conhecimento]
+    E --> D
+    F --> D
+    D --> G[Serviços Externos / APIs IFMG]
+    D --> H[Logs e Monitoramento]
+    D --> I[Respostas ao Usuário]
+
